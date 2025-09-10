@@ -1,0 +1,308 @@
+body {
+    background-color: burlywood;
+}
+/* ====== Фирменные переменные ====== */
+:root {
+  --brand-blue: hwb(218 22% 7% / 0.557);   
+  --brand-accent: #f59e0b;    /* янтарный акцент */
+  --brand-dark: #f9fafb;      /* почти белый для текста */
+  --brand-muted: #d1d5db;     /* светло-серый текст */
+  --brand-gradient: linear-gradient(90deg, #1e3a8a, #4f46e5); /* фон */
+}
+
+/* ====== Навбар ====== */
+.navbar {
+  background: var(--brand-gradient);
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* ====== Логотип ====== */
+.site-logo {
+  height: 46px;
+  width: auto;
+}
+.brand-text .brand-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  letter-spacing: 0.6px;
+}
+.brand-text .brand-sub {
+  font-size: 0.8rem;
+  color: var(--brand-muted);
+}
+
+/* ====== Навигация ====== */
+.nav-link {
+  font-weight: 500;
+  color: #fff;
+  padding: 0.5rem 0.9rem;
+  transition: color 0.25s ease, background 0.25s ease;
+  border-radius: 6px;
+}
+.nav-link:hover,
+.nav-link:focus {
+  background: rgba(255,255,255,0.15);
+  color: #fbbf24;
+}
+
+/* ====== Поиск ====== */
+.search-form {
+  gap: 8px;
+  align-items: center;
+}
+.search-input {
+  width: 200px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.9rem;
+  transition: width 0.25s ease;
+}
+.search-input:focus {
+  outline: none;
+  width: 240px;
+}
+.btn-search {
+  background: #fff;
+  color: var(--brand-primary);
+  border: none;
+  padding: 0.45rem 0.6rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+.btn-search:hover {
+  transform: scale(1.1);
+}
+
+/* ====== Корзина ====== */
+.btn-cart {
+  background: var(--brand-accent);
+  border: none;
+  color: #fff;
+  padding: 0.45rem 0.8rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease;
+  position: relative;
+}
+.btn-cart:hover {
+  background: #d97706;
+}
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+/* ====== Адаптив ====== */
+@media (max-width: 991.98px) {
+  .search-input {
+    display: none;
+  }
+}
+/* ===== Баннер с картинкой ===== */
+.hero-banner {
+  position: relative;
+  background: url("Panorama/Точечный\ рисунок\ —\ копия\ \(2\).bmp") center/cover no-repeat; /* 👈 сюда вставь свой фон */
+  color: #fff;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  overflow: hidden;
+}
+
+/* Полупрозрачный градиент для читаемости текста */
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(162, 98, 42, 0.47), rgba(61, 90, 157, 0.363));
+  z-index: 1;
+}
+
+/* Контейнер с текстом поверх */
+.hero-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Заголовок */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.756);
+}
+
+/* Подзаголовок */
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #f1f5f9;
+}
+
+/* Кнопка */
+.btn-hero {
+  background: var(--brand-accent);
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.btn-hero:hover {
+  background: #d97706;
+  transform: translateY(-4px);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: linear-gradient(135deg, #1e3a8a, #4f46e5);
+  color: #fff;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo {
+  max-width: 50px;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3));
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--brand-accent, #f59e0b); /* золотой акцент */
+}
+
+.footer-text {
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #fff;
+}
+
+/* Соцсети */
+.footer-social a {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  transition: color 0.3s ease;
+}
+.footer-social a:hover {
+  color: var(--brand-accent, #f59e0b);
+}
+
+/* Нижняя линия */
+.footer-bottom {
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.category-card {
+  position: relative;
+  flex: 1 1 25%;        /* делим экран на 4 карточки */
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* картинка заполняет карточку полностью */
+  display: block;
+}
+
+/* Текст поверх картинки */
+.card-title {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+  .category-card {
+    flex: 1 1 50%;  /* по 2 карточки в ряд */
+  }
+}
+@media (max-width: 576px) {
+  .category-card {
+    flex: 1 1 100%; /* по 1 карточке в ряд */
+  }
+}
+.card-title {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* чтобы текст читался на фото */
+}
+.category-card:hover img {
+  transform: scale(1.08); /* увеличение */
+  filter: brightness(0.8); /* затемнение */
+}
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.25, 1, 0.3, 1), 
+              filter 0.9s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.category-card:hover img {
+  transform: scale(1.1); /* чуть больше увеличения */
+  filter: brightness(0.75); /* плавное затемнение */
+}
+
